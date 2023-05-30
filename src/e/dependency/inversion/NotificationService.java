@@ -10,9 +10,24 @@ public class NotificationService {
         this.smsService = new SMSService();
     }
 
+    /**
+     * Send email and sms notification
+     * @param recipient
+     * @param message
+     */
     public void sendNotification(String recipient, String message) {
-        emailService.sendMessage(recipient, message);
-        smsService.sendMessage(recipient, message);
+        sendNotification(recipient, message,true);
+        sendNotification(recipient, message,false);
+    }
+
+    public void sendNotification(String recipient, String message , boolean emailConfirmed) {
+
+        if(emailConfirmed){
+            emailService.sendMessage(recipient,message);
+        }else {
+            smsService.sendMessage(recipient,message);
+        }
+
     }
 
 }

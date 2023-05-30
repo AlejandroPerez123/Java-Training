@@ -1,6 +1,8 @@
-package d.interfac.segregation.interfaces;
+package d.interfac.segregation;
 
-public class Motorcycle implements Drivable{
+import d.interfac.segregation.interfaces.Drivable;
+
+public class Motorcycle implements Drivable {
     @Override
     public void start() {
 

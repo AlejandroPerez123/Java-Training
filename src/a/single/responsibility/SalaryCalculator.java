@@ -1,5 +1,6 @@
 package a.single.responsibility;
 
-public class SalaryCalculator {
-    
+public abstract class SalaryCalculator {
+    abstract Double calculateSalary();
+    abstract Double calculateSalaryWithDiscount();
 }
